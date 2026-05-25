@@ -1,0 +1,57 @@
+extends src/templates/base/_layout
+
+
+//- -----------------------------------------
+//- head
+block append PARAM
+	-
+		//- 上書きする場合
+		//- siteTitle       = ""
+		//- siteDescription = ""
+		//- siteKeywords    = ""
+		root = ".";
+		pageName = 'Top'
+
+block append JS
+	//- jsの追加読み込み
+	//- script(src=root+"")
+
+block append HEADER
+	include src/templates/layout/ui/_contentHeader.pug
+
+block append MAIN
+	include src/templates/components/_precautions.pug
+
+	.main__scroll
+		img(data-asset="firstview-band.png")
+
+	.l-top__wrapper
+		.l-top__inner
+			.l-top__visuals
+				h1
+
+	section.contents1 
+		.contents__title-area.jsHeadTitleTrigger
+			h2.contents__title.jsLine タイトル1
+
+		include src/templates/components/_carousel.pug
+
+		.btn.jsBounce
+			a.btn__link(
+				href=""
+				target="_blank"
+			)
+				span 詳しくはこちら
+
+		+productNotice('ご注意事項', [
+			['テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+			'https://www.', '詳しくはこちら'],
+			['テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+			'https://www.', '詳しくはこちら'],
+			['テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト',
+			'https://www.', '詳しくはこちら'],
+		])
+
+
+	include src/templates/layout/ui/_contentFooter.pug
+
