@@ -1,0 +1,18 @@
+// ================================
+// components/_btn.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+.c-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: px_vw(280px * 2);
+  height: px_vw(50px * 2);
+  margin: auto;
+  font-weight: 900;
+  text-align: center;
+  border-radius: var(--border-radius-full);
+}

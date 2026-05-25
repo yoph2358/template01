@@ -1,0 +1,32 @@
+block PARAM
+	-
+		let siteTitle       = ""
+		let siteDescription = ""
+		let siteKeywords    = ""
+		let og_url          = "https://www.tokyodisneyresort.jp/treasure/duffy/goods/apreciousdaywithduffy.html"
+		let og_image        = "https://www.tokyodisneyresort.jp/treasure/duffy/goods/apreciousdaywithduffy/images/ogp.jpg"
+		let siteTitleSNS    = siteTitle.replace(/&/g, '＆')
+| <!DOCTYPE html>
+| <html lang="ja">
+
+include _head
+
+block BODY
+	|<body class="#{myClass}">
+	|	<div class="wrap">
+	|		<div class="pcWrap">
+	block HEADER
+
+	main
+		block MAIN
+
+
+	block FOOTER
+	|		</div>
+	|	</div>
+	|	<!-- /.wrap -->
+	|
+	|	<script type="module" src="/src/js/script.js"></script>
+	|</body>
+	|
+	|</html>

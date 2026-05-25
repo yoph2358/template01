@@ -1,0 +1,13 @@
+-
+	var facebookLink = "https://www.facebook.com/share.php?u="+og_url
+	var twitterLink  = "https://twitter.com/share?text=" + '【公式】' + siteTitleSNS + " | 東京ディズニーリゾート" + "&url=" + og_url
+	var lineLink     = "https://line.naver.jp/R/msg/text/?" + '【公式】' + siteTitleSNS + " | 東京ディズニーリゾート" + og_url
+
+footer#contentFooter
+	section.c-footer-wrapper
+		.c-sns-share
+			span.c-sns-share__label ＼　シェアしよう　／
+			ul.c-sns-share__list.u-mt--md
+				li.c-sns-share__item: a.c-sns-share__link.twitter(href=twitterLink target="_blank" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SE_duffysecretofasnowyday', label: 'sns_share_tw'}});" rel="noopener" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;")
+					img.c-sns-share__icon(data-asset="sns/sns_logo_x-black.svg" alt="Twitter")
+		.c-footer-notice

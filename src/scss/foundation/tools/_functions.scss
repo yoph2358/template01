@@ -1,0 +1,74 @@
+// ================================
+// tools/_function.scss
+// ================================
+
+@use "sass:math";
+@use "sass:meta";
+
+// ---width---//
+$w-sp: 375px !default;
+$w-pc: 500px !default;
+
+// ---responsive---//
+$bp: $w-pc !default;
+
+@mixin spView($breakpoint: $bp) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin pcView($breakpoint: $bp) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// ---function---//
+
+// 単位除去
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+// px → vw変換（min/maxで暴れ防止）
+@function px_vw($val, $width: $w-pc) {
+  $vw: math.div(strip-unit($val), strip-unit($width)) * 100;
+
+  @if $vw > 0 {
+    @return min(#{$vw}vw, #{$val});
+  } @else {
+    @return max(#{$vw}vw, #{$val});
+  }
+}
+
+@function px_vw_pc($val) {
+  @return px_vw($val, $w-pc);
+}
+
+@function px_vw_sp($val) {
+  @return px_vw($val, $w-sp);
+}
+
+@mixin responsive-vw($prop, $sp-px, $pc-px, $breakpoint: $bp, $important: false) {
+  $imp: if($important, "!important", null);
+
+  #{$prop}: px_vw_sp($sp-px) #{$imp};
+
+  @media (min-width: $breakpoint) {
+    #{$prop}: px_vw_pc($pc-px) #{$imp};
+  }
+}
+
+@mixin responsive-vw-map($pairs, $breakpoint: $bp, $important: false) {
+  @each $prop, $values in $pairs {
+    $sp: nth($values, 1);
+    $pc: nth($values, 2);
+
+    @include responsive-vw($prop, $sp, $pc, $breakpoint, $important);
+  }
+}

@@ -1,0 +1,69 @@
+// ================================
+// layout/_main.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+body {
+  background-color: #fbf7f0;
+}
+main {
+  position: relative;
+  z-index: -5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  background-color: lightblue;
+  overflow: hidden;
+  .main__scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px; /* 細さ調整 */
+    height: auto; /* 2倍にしてループ用 */
+    z-index: -3;
+    //background: url("../images/firstview-band.png") repeat-y;
+    animation: scrollY 70s linear infinite;
+  }
+  /*@media (width >= 500px) {
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      display: block;
+      width: var(--spacing-100);
+      height: 100%;
+      content: "";
+      background: linear-gradient(to left, #9b3836, transparent);
+      opacity: 1;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: block;
+      width: var(--spacing-100);
+      height: 100%;
+      content: "";
+      background: linear-gradient(to right, #9b3836, transparent);
+      opacity: 1;
+    }
+  }*/
+}
+/* アニメーション */
+@keyframes scrollY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

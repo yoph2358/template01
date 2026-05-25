@@ -1,0 +1,21 @@
+mixin productNotice(title = 'ご注意事項', items = null)
+  .l-Product--notice
+    .accordion
+      .accordion-item
+        .accordion-item__header
+          h3 #{title}
+        .accordion-item__content
+          .accordion-item__box
+            if items
+              ul
+                each it in items
+                  - var text  = Array.isArray(it) ? it[0] : it.text
+                  - var href  = Array.isArray(it) ? it[1] : it.href
+                  - var label = Array.isArray(it) ? (it[2] || '詳しくはこちら') : (it.label || '詳しくはこちら')
+                  li
+                    p!= text
+                    if href
+                      a(href=href, target="_blank" rel="noopener noreferrer") #{label}
+            else if block
+              ul
+                block

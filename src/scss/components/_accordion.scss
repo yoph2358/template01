@@ -1,0 +1,141 @@
+// ================================
+// layout/_accordion.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-info);
+  background-color: var(--color-accordion-contents-bg);
+  &-item {
+    position: relative;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+    &__box {
+      padding: 15px;
+    }
+    &__header {
+      position: relative;
+      cursor: pointer;
+
+      h3 {
+        position: relative;
+        display: block;
+        padding: var(--spacing-300) 0 px_vw(13px);
+        font-size: var(--font-size-accordion-ttl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-accordion-head-text);
+        text-align: center;
+        background-color: var(--color-accordion-head-bg);
+        @include spView() {
+          padding: var(--spacing-300) 0 px_vw(8px);
+        }
+        // padding: px_vw(10px) 0;
+      }
+
+      &::after {
+        position: absolute;
+        top: 55%;
+        right: px_vw(10px * 2);
+        display: block;
+        width: px_vw(20px);
+        height: px_vw(12px);
+        content: "";
+        background: url("../images/arrow_accordion.svg") no-repeat center / contain;
+        transform: translateY(-50%) rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &.is-open {
+        &::after {
+          transform: translateY(-50%) rotate(0);
+        }
+      }
+    }
+
+    &__content {
+      position: relative;
+      box-sizing: border-box;
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: var(--color-accordion-contents-bg);
+      transition:
+        max-height 0.3s ease-in-out,
+        padding 0.3s ease-in-out,
+        margin-top 0.3s ease-in-out;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0.8em;
+
+        li {
+          p {
+            position: relative;
+            padding-left: 1em;
+            margin-left: -1em;
+            font-size: px_vw_pc(13px);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-accordion-text);
+            @include spView() {
+              font-size: px_vw_sp(10px);
+            }
+            &::before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: block;
+              content: "・";
+            }
+          }
+
+          a {
+            position: relative;
+            display: block;
+            align-items: center;
+            width: fit-content;
+            font-size: px_vw_pc(13px);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-info-link);
+            text-decoration: none;
+            @include spView() {
+              font-size: px_vw_sp(10px);
+            }
+            &:hover {
+              text-decoration: none;
+            }
+
+            // &::before {
+            //   display: block;
+            //   position: absolute;
+            //   content: "";
+            //   top: 50%;
+            //   left: 0;
+            //   width: px_vw(12px * 1.33);
+            //   height: px_vw(12px * 1.33);
+            //   background: url(../images/arrow_textlink.svg) no-repeat center / contain;
+            //   transform: translateY(-50%);
+            // }
+          }
+
+          &.add {
+            &::before {
+              content: "・";
+            }
+          }
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@use "../foundation/tokens" as *;
+
+.u-text-orange {
+  color: var(--color-utility-text-orange) !important;
+}

@@ -1,0 +1,215 @@
+// ================================
+// foundation/_tokens.scss
+// ================================
+
+@use "./tools/functions" as *;
+
+// --------------------------------
+// Color Tokens
+// --------------------------------
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-pink: #f0cfe3;
+  --color-blue: #96bfe8;
+  --color-deepblue: #3daadf;
+  --color-navy: #073963;
+  --color-aqua: #c6e2f8;
+  --color-orange: #ff4e00;
+  --color-gray: #737372;
+  --color-beige: #fffbc7;
+  --color-brown: #7a5001;
+  --color-camel: #c99f4f;
+  --color-cream: #fffde3;
+}
+
+// ------------------------------
+// Semantic Tokens
+// ------------------------------
+
+:root {
+  --color-bg: url("../images/pc_bg.webp"); /* 全体背景 */
+  --color-shadow: var(--color-black); /* 全体背景 */
+  --color-text: var(--color-brown); /* 全体テキスト */
+  --color-card: var(--color-beige); /* カード背景 */
+  --color-carddeco: url("../images/carddeco.png"); /* カード背景装飾 */
+
+  /* logo */
+  --color-logo-bg: var(--color-aqua);
+
+  /* title */
+  --color-title-text: var(--color-brown);
+
+  /* story */
+  --color-story-text: var(--color-brown);
+
+  /* store */
+  --color-stores-bg: var(--color-blue);
+  --color-stores-card-bg: var(--color-white);
+  --color-stores-head-text: var(--color-white);
+  --color-stores-card-text: var(--color-brown);
+
+  /* utilities */
+  --color-utilities-btn-text: var(--color-white);
+  --color-utilities-btn-bg: var(--color-camel);
+  --color-utilities-follow-text: var(--color-brown);
+  --color-utilities-follow-bg: var(--color-turquoise);
+  --color-utilities-caption-text: var(--color-brown);
+
+  /* accordion */
+  --color-accordion-head-text: var(--color-white);
+  --color-accordion-head-bg: var(--color-camel);
+  --color-accordion-contents-text: var(--color-brown);
+  --color-accordion-contents-bg: var(--color-cream);
+
+  /* Footer */
+  --color-footer-bg: var(--color-aqua);
+  --color-footer-head: var(--color-brown);
+  --color-footer-text: var(--color-gray);
+  --color-sns-bg: var(--color-navy);
+  --color-sns-text: var(--color-white);
+
+  /* Text Utility */
+  --color-utility-text-orange: var(--color-orange);
+}
+
+// --------------------------------
+// Contents Tokens
+// --------------------------------
+// :root {
+//   --title-logo-width: #{px_vw(458px)};
+//   --title-text-bg-width: #{px_vw(458px)};
+//   --title-text-bg-height: #{px_vw(167px)};
+//   --contents-border-width: #{px_vw(495.6px)};
+//   --contents-border-height: #{px_vw(104px)};
+//   --contents-bnrimg-width: #{px_vw(198px)};
+// }
+
+// --------------------------------
+// Font Tokens
+// --------------------------------
+:root {
+  --font-family-base: "Zen Maru Gothic", sans-serif;
+  --font-family-info: "Noto Sans JP", sans-serif;
+}
+
+:root {
+  --font-step-0: #{px_vw(16px)};
+  --font-step-1: #{px_vw(18px)};
+  --font-step-2: #{px_vw(20px)};
+  --font-step-3: #{px_vw(22px)};
+  --font-step-4: #{px_vw(24px)};
+  --font-step-5: #{px_vw(26px)};
+  --font-step-6: #{px_vw(28px)};
+  --font-step-7: #{px_vw(34px)};
+  --font-step-8: #{px_vw(40px)};
+  --font-step-9: #{px_vw(42px)};
+  --font-step-10: #{px_vw(46px)};
+  --font-step-11: #{px_vw(48px)};
+  --font-step-12: #{px_vw(50px)};
+}
+
+:root {
+  /* Top */
+  --font-size-top-title: var(--font-size-xl);
+
+  /* Story */
+  --font-size-story-text: var(--font-size-lg);
+  --font-size-story-gallarytext: var(--font-size-sm);
+
+  /* stores */
+  --font-size-stores-head: var(--font-size-xl);
+  --font-size-stores-area: var(--font-size-md);
+  --font-size-stores-title: #{px_vw(17px * 2)};
+  --font-size-stores-note: #{px_vw(11px * 2)};
+
+  /* accordion */
+  --font-size-accordion-ttl: var(--font-size-lg);
+  --font-size-accordion-text: var(--font-size-md);
+
+  /* utilities */
+  --font-size-utilities-toptext: var(--font-size-lg);
+  --font-size-utilities-followtext: var(--font-size-lg);
+  --font-size-utilities-followbtntext: var(--font-size-lg);
+  --font-size-utilities-captiontext: #{px_vw(13px * 2)};
+
+  /* header */
+  --font-size-header-text: var(--font-size-xs);
+
+  /* footer */
+  --font-size-footer-head: var(--font-size-lg);
+  --font-size-footer-text: var(--font-size-md);
+}
+
+// --------------------------------
+// Font Weight Tokens
+// --------------------------------
+:root {
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-exbold: 800;
+}
+
+// --------------------------------
+// Spacing Tokens
+// --------------------------------
+:root {
+  --spacing-100: #{px_vw(13px)};
+  --spacing-200: #{px_vw(16px)};
+  --spacing-300: #{px_vw(21px)};
+  --spacing-400: #{px_vw(34px)};
+  --spacing-500: #{px_vw(55px)};
+}
+
+// --------------------------------
+// Radius & Border Tokens
+// --------------------------------
+:root {
+  --border-radius-5: #{px_vw(5px)};
+  --border-radius-10: #{px_vw(10px)};
+  --border-radius-20: #{px_vw(20px)};
+  --border-radius-30: #{px_vw(30px)};
+  --border-radius-40: #{px_vw(40px)};
+  --border-radius-full: 9999px;
+}
+
+// --------------------------------
+// Shadow Tokens
+// --------------------------------
+:root {
+  --shadow-5: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-10: 0 4px 6px rgb(0 0 0 / 10%);
+  --shadow-15: 0 10px 15px rgb(0 0 0 / 15%);
+}
+
+// --------------------------------
+// Z-Index Tokens
+// --------------------------------
+:root {
+  --z-index-bg: 0;
+  --z-index-base: 100;
+  --z-index-dropdown: 1000;
+  --z-index-overlay: 2000;
+  --z-index-modal: 3000;
+  --z-index-toast: 4000;
+}
+
+// --------------------------------
+// Transition Tokens
+// --------------------------------
+:root {
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+// --------------------------------
+// Layout Tokens
+// --------------------------------
+$container-max-width: 500px;
+$container-padding-inline: px_vw(16px);
+$container-padding-inline-md: px_vw(32px);
+$main-padding-block: px_vw(48px);
+$main-padding-block-md: px_vw(64px);

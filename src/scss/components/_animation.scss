@@ -1,0 +1,154 @@
+// ================================
+// object/_animation.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+/* fadeUp */
+
+#story {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    30% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  @keyframes slidefadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(10px) translateY(-10px);
+    }
+
+    30% {
+      opacity: 0;
+      transform: translateX(10px) translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  @keyframes opacityIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes powawan {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    20% {
+      transform: scale(1.15);
+    }
+
+    40% {
+      transform: scale(0.95);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    80% {
+      transform: scale(0.98);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .fadein.is-animated {
+    animation: fadeIn 1.5s ease forwards;
+  }
+
+  .slidefadein.is-animated {
+    animation: slidefadeIn 1.5s ease forwards;
+  }
+
+  .opacityIn {
+    opacity: 0;
+
+    &.is-animated {
+      animation: opacityIn 1.5s ease forwards;
+    }
+  }
+
+  .powawan.is-animated {
+    animation: powawan 1.5s ease forwards;
+  }
+
+  .d_02 {
+    animation-delay: 0.2s !important;
+  }
+
+  .d_05 {
+    animation-delay: 0.5s !important;
+  }
+
+  .d_08 {
+    animation-delay: 0.8s !important;
+  }
+
+  .c-story__slider-text {
+    li {
+      opacity: 0;
+
+      &.is-animated {
+        animation: opacityIn 1.5s ease forwards;
+      }
+    }
+  }
+}
+
+@keyframes load-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.load-in.is-animated {
+  animation: load-in 1.5s ease forwards;
+}
+
+.load-in,
+.slidefadein,
+.fadein,
+.powawan,
+.c-story__slider-text li {
+  opacity: 0;
+}

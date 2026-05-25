@@ -1,0 +1,31 @@
+head
+	|<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	|<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no" />
+
+	block TITLE
+		title !{'【公式】' }
+
+	block META
+		meta(name ="description" content=siteDescription)
+		|<!--ogp-->
+		meta(property="og:title" content!= '【公式】' )
+		|<meta property="og:type" content="website">
+
+		meta(property="og:url" content=og_url)
+		meta(property="og:image" content=og_image)
+		meta(property="og:description" content=siteDescription)
+
+		|
+		|<meta property="og:site_name" content="">
+
+
+		//- |<link rel="shortcut icon" href="/favicon.ico">
+		|<link href="https://www.tokyodisneyresort.jp/css/reset.css" rel="stylesheet">
+
+	block CSS
+		|<!--{* PCSP用css *}-->
+		|<link rel="stylesheet" href="https://www.tokyodisneyresort.jp/ssi/css/event_ps.css" type="text/css">
+
+	block JS
+		|<!--{* PCSP用js *}-->
+		|<script type="text/javascript" src="https://www.tokyodisneyresort.jp/ssi/js/event_ps.js"></script>

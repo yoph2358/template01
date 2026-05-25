@@ -1,0 +1,102 @@
+// ================================
+// layout/_contents1.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+.contents__title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  --clipRate: 100%;
+  position: relative;
+  &-area {
+    position: relative;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, calc(-50% - min(0.6vw, 0.1875rem)));
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 500/66;
+    background-image: url(src/images/contents__date-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    clip-path: inset(0 var(--clipRate) 0 0);
+  }
+}
+
+//slider
+.l-contents__box {
+  margin: 100px 0;
+}
+
+.l-contents__slide {
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+//btn
+.btn {
+  position: relative;
+  margin-bottom: 10vh;
+}
+.btn__link {
+  display: inline-block;
+  font-size: min(4.8vw, 1.5rem);
+  font-weight: 700;
+  width: 100%;
+  padding: min(6.4vw, 2rem) 0;
+  text-align: center;
+  background-color: #0a6aca;
+  border: min(1.2vw, 0.375rem) solid #ffd658;
+  border-radius: 1000px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: min(6vw, 1.875rem);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: min(8vw, 2.5rem);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #ffd658;
+    -webkit-filter: drop-shadow(0 5px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 5px 4px rgba(0, 0, 0, 0.4));
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: min(8vw, 2.5rem);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top: min(1.8vw, 0.5625rem) solid transparent;
+    border-bottom: min(1.8vw, 0.5625rem) solid transparent;
+    border-left: min(3.2vw, 1rem) solid #d94e7c;
+    border-right: 0;
+  }
+  span {
+    display: inline-block;
+    color: #fff;
+    width: 100%;
+  }
+}

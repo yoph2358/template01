@@ -1,0 +1,47 @@
+// ================================
+// style.scss
+// ================================
+
+// tools
+@use "./foundation/tools/mixin";
+
+// foundation
+@use "./foundation/tokens";
+@use "./foundation/reset";
+@use "./foundation/base";
+
+// plugin
+@use "./plugin/_slick/slick";
+@use "./plugin/_slick/slick-theme";
+@use "./plugin/slick-style";
+
+// layout
+@use "./layout/main";
+@use "./layout/top";
+@use "./layout/contents1";
+
+// @use "./layout/top";
+// @use "./layout/logo";
+// @use "./layout/title";
+// @use "./layout/mainvisual";
+// @use "./layout/story";
+// @use "./layout/lineup";
+// @use "./layout/utilities";
+
+// @use "./layout/contents";
+// @use "./layout/utilities";
+
+// ui
+@use "./ui/contentFooter";
+@use "./ui/contentHeader";
+
+// components
+@use "./components/animation";
+@use "./components/accordion";
+@use "./components/iframe";
+
+// @use "./components/btn";
+
+// // utility
+// @use "./utility/color";
+// @use "./utility/spacing";

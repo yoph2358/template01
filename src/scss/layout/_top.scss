@@ -1,0 +1,43 @@
+// ================================
+// layout/_main.scss
+// ================================
+
+@use "../foundation/tools/functions" as *;
+@use "../foundation/tokens" as *;
+
+.l-top {
+  &__wrapper {
+    position: relative;
+    height: 130vh;
+    overflow: hidden;
+  }
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  &__visuals {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: #fbf7f0;
+    width: px_vw(400px);
+    height: px_vw(170px);
+    border-radius: px_vw(10px);
+    margin: px_vw(20px) 0;
+    h1 {
+      text-align: center;
+      img {
+        width: 100%;
+        margin-top: px_vw(10px);
+      }
+      span {
+        color: #c55e5c;
+        font-size: var(--font-step-3);
+        font-family: "Sarina", cursive;
+        font-weight: 400;
+      }
+    }
+  }
+}

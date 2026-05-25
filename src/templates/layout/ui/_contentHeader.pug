@@ -1,0 +1,57 @@
+-
+	var facebookLink = "https://www.facebook.com/share.php?u="+og_url
+	var twitterLink  = "https://twitter.com/share?count=horizontal&original_referer="+og_url+"&text="+siteTitle+" | ×××××"+"&url="+og_url
+	var lineLink     = "https://line.naver.jp/R/msg/text/?"+siteTitle+" | ×××××"+og_url
+
+.pageTop
+header#contentHeader
+	.header_inner
+		.header_navTrigger
+			a(href="javascript:void(0)")
+				.header_navTrigger_line
+					span
+					span
+					span
+				//- p.header_navTrigger_text MENU
+		.header_navOpen
+			.header_navOpen_inner
+				.header_navOpen_lists
+					.header_navOpen_list
+						ul
+							li
+								a(
+									href=(isSubPage ? './#' : '#')
+									onmousedown=""
+								)
+									p トップ
+							hr.listBorder
+							li
+								a(
+									href=(isSubPage ? './#sample1' : '#Decoration')
+									onmousedown=""
+								)
+									p サンプル
+							hr.listBorder
+							li
+								a(
+									href=(isSubPage ? './#sample2' : '#Specialgoods')
+									onmousedown=""
+								)
+									p サンプル
+							hr.listBorder
+							li
+								a(
+									href=(isSubPage ? './#sample3' : '#Specialmenu')
+									onmousedown=""
+								)
+									p Contact
+							//hr.listBorder
+							//li
+								a(
+									href=(isSubPage ? './#DisneyResortLine' : '#DisneyResortLine')
+									onmousedown=""
+								)
+									picture
+										source(data-asset="header/header_sp_DisneyResortLine.png" media="(max-width: 500px)")
+										img(data-asset="header/header_pc_DisneyResortLine.png" alt="")
+									p ディズニーリゾートライン
